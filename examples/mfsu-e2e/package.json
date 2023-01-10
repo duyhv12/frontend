@@ -1,0 +1,31 @@
+{
+  "name": "@example/mfsu-e2e",
+  "private": true,
+  "author": "pshu <pishu.spf@antfin.com>",
+  "scripts": {
+    "build": "umi build",
+    "dev": "umi dev",
+    "e2e": "cypress run",
+    "e2e:ci": "cross-env HMR=none PORT=8000 start-server-and-test dev http://localhost:8000/__umi/api/status \\\"pnpm umi-scripts cypress\\\"",
+    "set:mfsu:eager:esbuild": "umi config set mfsu {\\\"strategy\\\":\\\"eager\\\",\\\"esbuild\\\":true}",
+    "set:mfsu:eager:webpack": "umi config set mfsu {\\\"strategy\\\":\\\"eager\\\"}",
+    "set:mfsu:normal:esbuild": "umi config set mfsu {\\\"strategy\\\":\\\"normal\\\",\\\"esbuild\\\":true}",
+    "set:mfsu:normal:webpack": "umi config set mfsu {\\\"strategy\\\":\\\"normal\\\"}",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "lodash.uppercase": "^4.3.0",
+    "umi": "4.0.0-canary.20230109.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "cross-env": "^7.0.3",
+    "cypress": "^10.0.0",
+    "rimraf": "3.0.2",
+    "start-server-and-test": "^1.0.0",
+    "typescript": "^4.1.2",
+    "wait-on": "^6.0.1"
+  }
+}
